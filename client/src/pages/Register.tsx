@@ -1,198 +1,109 @@
-import React, { ChangeEvent, FormEvent, useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { ToastContainer, toast, ToastOptions } from "react-toastify";
-import axios, { AxiosError, AxiosResponse } from "axios";
-
-import { registerRoute } from "../utils/APIRoutes";
-
-import "../index.css";
-import "react-toastify/dist/ReactToastify.css";
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+import { motion } from "framer-motion";
 
 
-function Register() {
+export default function Register() {
 
-    const navigate = useNavigate();
-
-    const toastOptions: ToastOptions = {
-        position: "bottom-right",
-        autoClose: 8000,
-        pauseOnHover: true,
-        draggable: true,
-        theme: "dark",
+    const variants1 = {
+        hidden: {
+            x: "50%",
+            opacity: 1,
+        },
+        visible: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                type: "spring",
+                damping: 15,
+                stiffness: 100,
+            },
+        },
     };
 
-    const [values, setValues] = useState({
-        username: "",
-        email: "",
-        password: "",
-        passwordConfirmation: "",
-    });
-
-    const handleChange = ( event: ChangeEvent<HTMLInputElement> ) => {
-        setValues({ ...values, [event.target.name]: event.target.value });
-    };
-
-    const handleValidation = () => {
-        const { password, passwordConfirmation, username, email } = values;
-
-        if ( password !== passwordConfirmation ) {
-            toast.error(
-                "Password and confirm password should be same.",
-                toastOptions
-            );
-            return false;
-
-        } else if ( username.length < 3 ) {
-            toast.error(
-                "Username should be greater than 3 characters.",
-                toastOptions
-            );
-            return false;
-
-        } else if ( password.length < 8 ) {
-            toast.error(
-                "Password should be equal or greater than 8 characters.",
-                toastOptions
-            );
-            return false;
-
-        } else if ( email === "" ) {
-            toast.error(
-                "Email is required.", 
-                toastOptions
-            );
-            return false;
-        };
-
-        return true;
-    };
-
-    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-
-        if (handleValidation()) {
-            const { username, email, password } = values;
-
-            try {
-                const response: AxiosResponse = await axios.post(registerRoute, {
-                    username,
-                    email,
-                    password,
-                });
-
-                if ( response.data.status ) {
-                    localStorage.setItem("chat-app-user", JSON.stringify(response.data.user));
-                } else {
-                    toast.error(response.data.msg, toastOptions);
-                };
-
-                navigate("/");
-
-            } catch ( error: any | AxiosError ) {
-
-                if ( axios.isAxiosError(error) ) {
-                    if (error.response) {
-                        console.error("Erreur de serveur :", error.response.data);
-                    } else {
-                        console.error("Erreur de réseau :", error.message);
-                    };
-
-                } else {
-                    console.error("Erreur inconnue :", error);
-                };
-
-            };
-        };
+    const variants2 = {
+        hidden: {
+            x: "-50%",
+            opacity: 0,
+        },
+        visible: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                type: "spring",
+                damping: 15,
+                stiffness: 100,
+            },
+        },
     };
 
     return (
 
-        <section className="w-full max-w-md">
-            <form
-                onSubmit={(event) => handleSubmit(event)}
-                className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
-            >
-                <h1 className="text-gray-700 mb-4 text-xl">Register</h1>
+        <motion.section className="h-screen flex flex-row bg-green" initial="hidden" animate="visible" variants={variants1}>
 
-                <div className="mb-4">
-                <label
-                    htmlFor="username"
-                    className="block text-gray-700 text-sm mb-2"
-                >
-                    Username
-                </label>
-                <input
-                    required
-                    type="text"
-                    name="username"
-                    placeholder="Username"
-                    onChange={(e) => handleChange(e)}
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                />
+            <motion.div className="h-full w-2/4 p-6 flex flex-col justify-center items-center gap-14 bg-black rounded-s-lg" variants={variants1}>
+
+                <div className="flex flex-col gap-4 items-center">
+                    <Link to={"/"}>
+                        <div className="h-20 w-20 bg-green rounded-full"></div>
+                    </Link>
+                    <h1 className=" text-center text-grey-light text-4xl font-bold">
+                        Sign In
+                    </h1>
                 </div>
 
-                <div className="mb-4">
-                <label htmlFor="email" className="block text-gray-700 text-sm mb-2">
-                    Email
-                </label>
-                <input
-                    required
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    onChange={(e) => handleChange(e)}
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                />
+                <form action="#" method="POST" className="flex flex-col">
+                    <div className="mb-6">
+                        <label htmlFor="email" className="text-lg font-normal text-grey-light">
+                            Email
+                        </label>
+                        <input id="email" name="email" type="email"  autoComplete="off" placeholder="Enter your email" required
+                            className="mt-2 w-full px-3 bg-grey-dark text-base rounded-md border-0 py-2 ring-0 outline-none ring-grey focus:ring-2 focus:ring-inset focus:ring-green text-blue-light placeholder:text-blue-light placeholder:font-light placeholder:text-base"/>
+                    </div>
+
+                    <div className="mb-10">
+                        <label htmlFor="password" className="text-lg text-grey-light font-normal">
+                            Password
+                        </label>
+                        <input id="password" name="password" type="password" autoComplete="off"  placeholder="Enter your password" required
+                            className="mt-2 w-full px-3 bg-grey-dark text-base rounded-md border-0 py-2 ring-0 outline-none ring-grey focus:ring-2 focus:ring-inset focus:ring-green text-blue-light placeholder:text-blue-light placeholder:font-light placeholder:text-base"/>
+                    </div>
+
+                    <div className="flex flex-row items-center justify-center">
+                        <button type="submit"
+                            className="btn gap-1 delay-150 bg-green px-4 py-2 text-lg font-medium leading-6 text-grey-dark hover:bg-green-lighten hover:gap-2">
+                                Sign in
+                                <FontAwesomeIcon icon={faArrowRight} className="text-sm" />
+                        </button>
+                    </div>
+                </form>
+
+                <div>
+                    <p className="font-grey-light font-light text-base">
+                        Already have an account ? 
+                        <span>
+                            <Link to={"/login"} className="ml-1 font-normal text-green hover:cursor-pointer hover:text-green-lighten">
+                                Log In
+                            </Link>
+                        </span>
+                    </p>
                 </div>
 
-                <div className="mb-4">
-                <label
-                    htmlFor="password"
-                    className="block text-gray-700 text-sm mb-2"
-                >
-                    Password
-                </label>
-                <input
-                    required
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    onChange={(e) => handleChange(e)}
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                />
-                </div>
+            </motion.div>
 
-                <div className="mb-4">
-                <label
-                    htmlFor="passwordConfirmation"
-                    className="block text-gray-700 text-sm mb-2"
-                >
-                    Confirm your password
-                </label>
-                <input
-                    required
-                    type="password"
-                    name="passwordConfirmation"
-                    placeholder="Confirm your password"
-                    onChange={(e) => handleChange(e)}
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                />
-                </div>
+            <motion.div className="h-full w-2/4 flex flex-col justify-center items-start gap-4 bg-blue-light rounded-e-lg p-10" variants={variants2}>
+                <p className="text-grey-dark font-black text-7xl">
+                    Don't know which album to listen to ?
+                </p>
+                <p className="text-grey-dark font-medium text-3xl">
+                    Let <span className="font-semibold italic">Choosify</span> help you choose
+                </p>
+            </motion.div>
 
-                <div className="flex items-center justify-between">
-                <button className="btn" type="submit">
-                    Create User
-                </button>
-                <span className="inline-block align-baseline text-sm text-blue-500 hover:cursor">
-                    Already have an account ?<Link to="/login"> Login</Link>
-                </span>
-                </div>
-            </form>
-            <ToastContainer />
-        </section>
+        </motion.section>
 
-    );
+    )
 
 };
-
-export default Register;

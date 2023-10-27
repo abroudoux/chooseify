@@ -4,16 +4,36 @@
 
 
 body {
-    @apply bg-gray-950 text-slate-50;
+    @apply background-gradient text-grey-light rounded-lg p-4 scroll-smooth;
     font-family: 'Inter', sans-serif;
-};
+}
 
-@layer components {
-    .btn {
-        @apply p-2 bg-gray-950 border-solid border-2 border-slate-50 rounded-md;
-    };
+body::-webkit-scrollbar {
+	display: none;
+}
 
-    .card {
-        @apply py-3 rounded-md bg-gray-950 shadow-md h-full;
-    };
-};
+.active {
+    @apply bg-black px-4 flex items-center py-2 rounded-lg;
+}
+
+.h1-hero-banner {
+    background: -webkit-linear-gradient(#60D393, #AAC8E4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.background-gradient {
+    background: -webkit-linear-gradient(#60D393, #60D373);
+}
+
+.border-gradient {
+    background: -webkit-linear-gradient(#60D393, #AAC8E4);
+}
+
+.page {
+    @apply w-full h-auto flex flex-col items-center p-20 bg-black text-grey-light
+}
+
+.btn {
+    @apply flex flex-row items-center px-4 py-2 rounded-lg font-medium transition-all ease-in-out;
+}
