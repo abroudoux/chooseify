@@ -12,7 +12,7 @@ import Start from "./pages/Start";
 
 import Header from "./components/Header/Header";
 import HeaderDashboard from "./components/Header/HeaderDashboard";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer/Footer";
 
 import "./index.css";
 
@@ -30,7 +30,7 @@ const AppRoutes = () => {
     const showHeaderDashboardPaths = ["/dashboard", "/dashboard/account"];
     const shouldShowHeaderDashboard = showHeaderDashboardPaths.includes(location.pathname);
 
-    const showFooterPaths = ["/", "/start", "/about", "/contact"];
+    const showFooterPaths = ["/", "/start", "/about"];
     const shouldShowFooter = showFooterPaths.includes(location.pathname);
 
     return (

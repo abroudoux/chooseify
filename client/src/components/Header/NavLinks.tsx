@@ -3,8 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 
 
 type NavLinkProps = {
-    path: string;
-    title: string;
+    path : string;
+    title : string;
 };
 
 const NavLinks = ( props : NavLinkProps ) => {

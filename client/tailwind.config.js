@@ -40,16 +40,16 @@ export const theme = {
         },
     },
     colors: {
-        'green': '#60D393',
-        'green-lighten': '#70d79e',
-        'black': '#1A1A1A',
-        'white': '#FFFFFFDE',
-        'grey-light': '#EBEDF0',
-        'grey-light-lighten': '#f5f6f7',
-        'grey-dark': '#2F2F2F',
-        'grey-dark-lighten': '#393939',
-        'blue-light': '#AAC8E4',
-        'blue-light-lighten': '#d4e3f1',
+        'green': 'var(--green)',
+        'green-lighten': 'var(--green-lighten)',
+        'black': 'var(--black)',
+        'white': 'var(--white)',
+        'grey-light': 'var(--grey-light)',
+        'grey-light-lighten': 'var(--grey-light-lighten)',
+        'grey-dark': 'var(--grey-dark)',
+        'grey-dark-lighten': 'var(--grey-dark-lighten)',
+        'blue-light': 'var(--blue-light)',
+        'blue-light-lighten': 'var(--blue-light-lighten)',
     }
 };
 

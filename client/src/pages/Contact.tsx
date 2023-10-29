@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import SuccessAlert from "../components/Alerts/SuccessAlert";
 
 
 export default function Contact() {
 
     const [formData, setFormData] = useState({
         email: '',
-        message: ''
+        message: '',
     });
 
     const handleChange = (e: { target: { name: any; value: any; }; }) => {
@@ -16,13 +17,23 @@ export default function Contact() {
         setFormData({ ...formData, [name]: value });
     };
 
+    const [showSuccess, setShowSuccess] = useState(false);
+
+    const handleSend = () => {
+        setShowSuccess(true);
+    };
+
 
     return (
         <section className="flex flex-row">
 
-            <div className="h-auto w-2/4 p-6 flex flex-col justify-center items-center gap-14 bg-black" >
+            {showSuccess && (
+                <SuccessAlert message="Message succesfully sent" messageCta="Go Home" path="/" />
+            )}
 
-                <div className="flex flex-col gap-4 items-center">
+            <div className="h-auto w-2/4 p-36 flex flex-col-center gap-10 bg-black rounded-es-lg">
+
+                <div className="flex flex-col-center gap-4">
                     <h1 className="text-center font-bold text-grey-light text-4xl ">
                         Contact
                     </h1>
@@ -34,7 +45,7 @@ export default function Contact() {
                             Email
                         </label>
                         <input id="email" name="email" type="email"  autoComplete="off" placeholder="Enter your email" required onChange={handleChange}
-                            className="mt-2 w-full px-3 bg-grey-dark text-base rounded-md border-0 py-2 ring-0 outline-none ring-grey focus:ring-2 focus:ring-inset focus:ring-green text-blue-light placeholder:text-blue-light placeholder:font-light placeholder:text-base"/>
+                            className="input-green-ring"/>
                     </div>
 
                     <div className="mb-10">
@@ -42,23 +53,36 @@ export default function Contact() {
                             Your message
                         </label>
                         <textarea id="message" name="message" autoComplete="off"  placeholder="Enter your message" required onChange={handleChange}
-                            className="mt-2 w-full px-3 bg-grey-dark text-base rounded-md border-0 py-2 ring-0 outline-none ring-grey focus:ring-2 focus:ring-inset focus:ring-green text-blue-light placeholder:text-blue-light placeholder:font-light placeholder:text-base"/>
+                            className="input-green-ring"/>
                     </div>
 
-                    <div className="flex flex-row items-center justify-center">
-                        <button type="submit"
-                            className="btn gap-1 delay-150 bg-green px-4 py-2 text-lg font-medium leading-6 text-black hover:bg-green-lighten hover:gap-2">
+                    <div className="flex-row-center-center">
+                        <p onClick={ handleSend }
+                            className="btn-green-icon hover:cursor-pointer">
                                 Send
                                 <FontAwesomeIcon icon={faArrowRight} className="text-sm" />
-                        </button>
+                        </p>
+                        {/* <button type="submit"
+                            className="btn-green-icon">
+                                Send
+                                <FontAwesomeIcon icon={faArrowRight} className="text-sm" />
+                        </button> */}
                     </div>
                 </form>
 
             </div>
 
-            <div className="h-auto w-2/4 p-6 flex flex-col justify-center items-center gap-14 bg-black" >
+            <div className="h-auto w-2/4 p-36 flex-col-center gap-14 bg-blue-light rounded-ee-lg">
 
-                <pre>{JSON.stringify(formData, null, 2)}</pre>
+                <div className="flex-col-center gap-4">
+                    <h1 className="text-center font-bold text-grey-dark text-4xl ">
+                        Your message
+                    </h1>
+                </div>
+
+                <pre className="text-grey-dark">
+                    {JSON.stringify(formData, null, 2)}
+                </pre>
 
             </div>
 

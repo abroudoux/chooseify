@@ -4,9 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Card from "../components/Card";
-
-import "../style/components/cards.scss";
+import Card from "../components/Cards/Card";
 
 
 export default function Home() {
@@ -15,7 +13,7 @@ export default function Home() {
 
         <section className="page gap-64">
 
-            <div className="h-auto w-full flex flex-col items-center gap-20">
+            <div className="h-auto w-full flex-col-center gap-20">
 
                 <h1 className="text-center text-6xl h1-hero-banner max-w-5xl font-black" data-aos="fade-up" data-aos-duration="3000">
                     From a Notion Database, launch randomly an album on Spotify
@@ -23,9 +21,9 @@ export default function Home() {
                 <p className="max-w-3xl text-center text-xl text-grey-light font-normal" data-aos="fade-up" data-aos-duration="3000">
                     J'avoue je sais pas encore quoi écrire mais t'inquiètes pas ça va venir pour le moment je laisse ça comme ça
                 </p>
-                <ul className="flex flex-row items-center gap-8 text-lg">
+                <ul className="flex-row-center gap-8 text-lg">
                     <li data-aos="fade-up" data-aos-duration="3000">
-                        <Link to={"/start"} className="btn gap-2 bg-green text-grey-dark hover:bg-green-lighten hover:gap-3">
+                        <Link to={"/start"} className="btn-green-icon">
                             Get started
                             <FontAwesomeIcon icon={faArrowRight} />
                         </Link>
@@ -40,9 +38,9 @@ export default function Home() {
 
             </div>
 
-            <div className="h-auto w-full flex flex-col items-center max-w-5xl gap-16">
+            <div className="h-auto w-full flex-col-center max-w-5xl gap-16">
 
-                <div className="flex w-full flex-col items-start gap-3">
+                <div className=" w-full flex flex-col items-start gap-3">
                     <p className="text-xl text-grey-light font-extralight leading-10">
                         Lorem, ipsum.
                     </p>
@@ -54,10 +52,10 @@ export default function Home() {
                     </p>
                 </div>
 
-                <div className="w-full flex flex-row justify-between">
-                    <Card title="Première Card"/>
-                    <Card title="Deuxième Card"/>
-                    <Card title="Troisième Card"/>
+                <div className="w-full flex-row-center-between">
+                    <Card title="1st Card"/>
+                    <Card title="2nd Card"/>
+                    <Card title="3rd Card"/>
                 </div>
 
             </div>

@@ -1,0 +1,13 @@
+- Animation menu li
+- Dropdown sur la partie "Mon Compte"
+- Animation Scroll
+- Padding bottom body
+- Animation switch Login / Sign In 
+- Animation Parralax accueil
+- meta données
+- page about
+- page start (hub)
+- dashboard
+- steps notion to spotify
+- tests
+- intégrer logos

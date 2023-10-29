@@ -8,7 +8,7 @@ export default function Header() {
 
     return (
 
-        <header className="w-full flex flex-row justify-between items-center px-10 py-4 sticky top-4 bg-grey-dark rounded-t-lg">
+        <header className="w-full flex-row-center-between px-10 py-4 sticky top-4 bg-grey-dark rounded-t-lg">
 
             <div>
                 <Link to={"/"}>
@@ -17,7 +17,7 @@ export default function Header() {
             </div>
 
             <nav className="flex-1 px-16">
-                <ul className="flex flex-row items-center">
+                <ul className="flex-row-center">
                     <NavLinks path="/" title="Home" />
                     <NavLinks path="/start" title="Start" />
                     <NavLinks path="/about" title="About" />
@@ -26,14 +26,14 @@ export default function Header() {
             </nav>
 
             <div>
-                <ul className="flex flex-row items-center gap-2">
+                <ul className="flex-row-center gap-2">
                     <li>
-                        <Link to={"/login"} className="btn text-grey-light hover:decoration-green">
+                        <Link to={"/login"} className="btn text-grey-light hover:text-blue-light">
                             Log In
                         </Link>
                     </li>
                     <li>
-                        <Link to={"/register"} className="btn text-grey-dark bg-grey-light rounded-lg border-grey-light border-2 delay-75 hover:bg-grey-dark hover:border-grey-light hover:text-grey-light">
+                        <Link to={"/register"} className="btn-white">
                             Sign In
                         </Link>
                     </li>

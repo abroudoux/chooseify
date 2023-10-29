@@ -7,11 +7,6 @@ import { motion } from "framer-motion";
 
 export default function Login() {
 
-    // const variants = {
-    //     hidden: {opacity: 0, x: "-100%"},
-    //     visible: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 100 } },
-    // };
-
     const variants1 = {
         hidden: {
             x: "-50%",
@@ -57,9 +52,9 @@ export default function Login() {
                     </p>
             </motion.div>
 
-            <motion.div className="h-full w-2/4 p-6 flex flex-col justify-center items-center gap-14 bg-black rounded-e-lg" variants={variants2}>
+            <motion.div className="h-full w-2/4 p-6 flex-col-center-center gap-14 bg-black rounded-e-lg" variants={variants2}>
 
-                <div className="flex flex-col gap-4 items-center">
+                <div className="flex-col-center gap-4">
                     <Link to={"/"}>
                         <div className="h-20 w-20 rounded-full bg-green"></div>
                     </Link>
@@ -74,7 +69,7 @@ export default function Login() {
                             Email
                         </label>
                         <input id="email" name="email" type="email"  autoComplete="off" placeholder="Enter your email" required
-                            className="mt-2 w-full px-3 bg-grey-dark text-base rounded-md border-0 py-2 ring-0 outline-none ring-grey focus:ring-2 focus:ring-inset focus:ring-green text-blue-light placeholder:text-blue-light placeholder:font-light placeholder:text-base"/>
+                            className="input-green-ring"/>
                     </div>
 
                     <div className="mb-10">
@@ -82,12 +77,12 @@ export default function Login() {
                             Password
                         </label>
                         <input id="password" name="password" type="password" autoComplete="off"  placeholder="Enter your password" required
-                            className="mt-2 w-full px-3 bg-grey-dark text-base rounded-md border-0 py-2 ring-0 outline-none ring-grey focus:ring-2 focus:ring-inset focus:ring-green text-blue-light placeholder:text-blue-light placeholder:font-light placeholder:text-base"/>
+                            className="input-green-ring"/>
                     </div>
 
-                    <div className="flex flex-row items-center justify-center">
+                    <div className="flex-row-center-center">
                         <button type="submit"
-                            className="btn gap-1 delay-150 bg-green px-4 py-2 text-lg font-medium leading-6 text-black hover:bg-green-lighten hover:gap-2">
+                            className="btn-green-icon">
                                 Log In
                                 <FontAwesomeIcon icon={faArrowRight} className="text-sm" />
                         </button>

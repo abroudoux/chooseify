@@ -8,10 +8,10 @@ export default function HeaderDashboard() {
 
     return (
 
-        <header className="w-full flex flex-row justify-between items-center sticky top-4 bg-grey-dark px-10 py-4 rounded-t-lg">
+        <header className="w-full flex-row-center-between sticky top-4 bg-grey-dark px-10 py-4 rounded-t-lg">
 
             <div>
-                <Link to={"/"} className="flex flex-row items-center gap-3">
+                <Link to={"/"} className="flex-row-center gap-3">
                     <div className="h-14 w-14 bg-green rounded-full"></div>
                     <p className="text-3xl font-semibold">
                         Choosify
@@ -20,7 +20,7 @@ export default function HeaderDashboard() {
             </div>
 
             <div>
-                <Link to={"dashboard/account"} className="flex flex-row items-center gap-2">
+                <Link to={"dashboard/account"} className="flex-row-center gap-2">
                     <p>{ userName }</p>
                     <div className="h-10 w-10 bg-grey-light rounded-full"></div>
                 </Link>
