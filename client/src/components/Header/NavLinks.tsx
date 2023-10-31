@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 
@@ -7,7 +7,7 @@ type NavLinkProps = {
     title : string;
 };
 
-const NavLinks = ( props : NavLinkProps ) => {
+const NavLinks : FC<NavLinkProps> = ( props ) => {
 
     const location = useLocation();
 

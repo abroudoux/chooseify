@@ -26,5 +26,5 @@
             ]
         }
     },
-    "include": ["./src", "tests/App.test.tsx"]
+    "include": ["./src", "tests/Home.test.tsx"]
 }

@@ -14,7 +14,7 @@ import Header from "./components/Header/Header";
 import HeaderDashboard from "./components/Header/HeaderDashboard";
 import Footer from "./components/Footer/Footer";
 
-import "./index.css";
+import "./style/index.css";
 
 
 const rootContainer = document.getElementById("root");

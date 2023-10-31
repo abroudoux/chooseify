@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 
 import "../../style/components/card.scss";
 
@@ -7,7 +7,7 @@ type CardProps = {
     title: string;
 };
 
-const Card = ( props: CardProps ) => {
+const Card : FC<CardProps> = ( props ) => {
 
     return (
 
@@ -22,7 +22,7 @@ const Card = ( props: CardProps ) => {
         </div>
 
     )
-};
+}
 
 
 export default Card;

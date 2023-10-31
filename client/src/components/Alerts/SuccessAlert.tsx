@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,7 +13,7 @@ type SuccessAlertProps = {
     path : string;
 };
 
-const SuccessAlert = ( props : SuccessAlertProps ) => {
+const SuccessAlert : FC<SuccessAlertProps> = ( props ) => {
 
     return (
 
