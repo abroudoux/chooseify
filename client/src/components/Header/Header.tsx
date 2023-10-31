@@ -17,11 +17,12 @@ export default function Header() {
             </div>
 
             <nav className="flex-1 px-16">
-                <ul className="flex-row-center">
+                <ul className="flex-row-center w-auto">
                     <NavLinks path="/" title="Home" />
                     <NavLinks path="/start" title="Start" />
                     <NavLinks path="/about" title="About" />
                     <NavLinks path="/contact" title="Contact" />
+                    <li className="slide absolute top-0 left-0 w-full h-full -z-10 transition-all opacity-0"></li>
                 </ul>
             </nav>
 

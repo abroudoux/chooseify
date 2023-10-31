@@ -3,6 +3,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import SuccessAlert from "../components/Alerts/SuccessAlert";
+import Input from "../components/Form/Input";
 
 
 export default function Contact() {
@@ -40,12 +41,9 @@ export default function Contact() {
                 </div>
 
                 <form action="#" method="POST" className="flex flex-col">
+
                     <div className="mb-6">
-                        <label htmlFor="email" className="text-lg font-normal text-grey-light">
-                            Email
-                        </label>
-                        <input id="email" name="email" type="email"  autoComplete="off" placeholder="Enter your email" required onChange={handleChange}
-                            className="input-green-ring"/>
+                        <Input name="email" type="email" placeholder="Enter your email" label="Email" />
                     </div>
 
                     <div className="mb-10">

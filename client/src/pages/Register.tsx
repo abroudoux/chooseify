@@ -4,6 +4,8 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 
+import Input from '../components/Form/Input'
+
 
 export default function Register() {
 
@@ -55,20 +57,13 @@ export default function Register() {
                 </div>
 
                 <form action="#" method="POST" className="flex flex-col">
+
                     <div className="mb-6">
-                        <label htmlFor="email" className="text-lg font-normal text-grey-light">
-                            Email
-                        </label>
-                        <input id="email" name="email" type="email"  autoComplete="off" placeholder="Enter your email" required
-                            className="input-green-ring"/>
+                        <Input name="email" type="email" placeholder="Enter your email" label="Email" />
                     </div>
 
                     <div className="mb-10">
-                        <label htmlFor="password" className="text-lg text-grey-light font-normal">
-                            Password
-                        </label>
-                        <input id="password" name="password" type="password" autoComplete="off"  placeholder="Enter your password" required
-                            className="input-green-ring"/>
+                        <Input name="password" type="password" placeholder="Enter your password" label="Password" />
                     </div>
 
                     <div className="flex-row-center-center">
@@ -78,6 +73,7 @@ export default function Register() {
                                 <FontAwesomeIcon icon={faArrowRight} className="text-sm" />
                         </button>
                     </div>
+
                 </form>
 
                 <div>
