@@ -4,7 +4,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-import Input from '../components/Form/Input';
+import Input from '../components/Forms/Input';
 
 
 export default function Login() {
