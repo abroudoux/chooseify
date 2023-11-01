@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { ChangeEvent, FC } from "react";
 
 
 type InputProps = {
@@ -6,7 +6,8 @@ type InputProps = {
     label : string,
     type : string,
     placeholder : string,
-    element : string,
+    element ? : string,
+    onChange ? : (event: ChangeEvent<HTMLInputElement>) => void,
 };
 
 const Input : FC<InputProps> = ( props ) => {
@@ -18,7 +19,7 @@ const Input : FC<InputProps> = ( props ) => {
                 { props.label }
             </label>
             <input
-                name={ props.name } type={ props.type }  autoComplete="off" placeholder={ props.placeholder } required
+                name={ props.name } type={ props.type }  autoComplete="off" placeholder={ props.placeholder } onChange={ props.onChange } required
                 className="input-green-ring"/>
         </>
 
