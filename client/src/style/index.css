@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* { 
+    scrollbar-width: none ;
+    ms-overflow-style: none;
+}
+
+body {
+    @apply background-gradient text-grey-light p-4 scroll-smooth;
+    font-family: 'Inter', sans-serif;
+}
+
+body::-webkit-scrollbar {
+	display: none;
+}
+
+:root {
+    --green: #60D393;
+    --green-lighten: #70d79e;
+    --black: #1A1A1A;
+    --white: #FFFFFFDE;
+    --grey-light: #EBEDF0;
+    --grey-light-lighten: #f5f6f7;
+    --grey-dark: #2F2F2F;
+    --grey-dark-lighten: #393939;
+    --blue-light: #AAC8E4;
+    --blue-light-lighten: #d4e3f;
+}
+
+textarea {
+    resize: none;
+}
+
+.flex-col-center {
+    @apply flex flex-col items-center;
+}
+
+.flex-row-center {
+    @apply flex flex-row items-center;
+}
+
+.flex-row-center-between {
+    @apply flex-row-center justify-between;
+}
+
+.flex-row-center-center {
+    @apply flex-row-center justify-center;
+}
+
+.flex-col-center-center {
+    @apply flex-col-center justify-center;
+}
+
+.active {
+    @apply flex-row-center py-2 px-4 bg-black rounded-lg;
+}
+
+.h1-hero-banner {
+    background: -webkit-linear-gradient(var(--green), var(--blue-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.background-gradient {
+    background: -webkit-linear-gradient(var(--green), var(--green-lighten));
+}
+
+.border-gradient {
+    background: -webkit-linear-gradient(var(--green), var(--blue-light));
+}
+
+.page {
+    @apply w-full h-auto flex-col-center p-20 bg-black text-grey-light
+}
+
+.btn {
+    @apply flex-row-center gap-2 px-4 py-2 rounded-lg font-medium transition-all ease-in-out;
+}
+
+.btn-green {
+    @apply btn bg-green text-grey-dark hover:bg-green-lighten;
+}
+
+.btn-green-icon {
+    @apply btn-green gap-2 hover:gap-3;
+}
+
+.btn-grey-dark {
+    @apply btn text-blue-light bg-grey-dark hover:bg-grey-dark-lighten;
+}
+
+.btn-grey-dark-icon {
+    @apply btn-grey-dark gap-2;
+}
+
+.btn-white {
+    @apply btn text-grey-dark bg-grey-light border-grey-light border-2 hover:bg-grey-dark hover:border-grey-light hover:text-grey-light;
+}
+
+.btn-white-icon {
+    @apply btn-white gap-2;
+}
+
+.input-green-ring {
+    @apply mt-2 w-full px-3 bg-grey-dark text-base rounded-md border-0 py-2 ring-0 outline-none ring-grey-light focus:ring-2 focus:ring-inset focus:ring-green text-blue-light placeholder:text-blue-light placeholder:font-light placeholder:text-base;
+}
+
