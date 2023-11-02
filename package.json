@@ -1,0 +1,22 @@
+{
+    "name": "chooseify",
+    "description": "",
+    "version": "0.0.1",
+    "author": "abroudoux",
+    "public": true,
+    "license": "MIT",
+    "scripts": {
+        "dev": "turbo run dev"
+    },
+    "devDependencies": {
+        "@types/testing-library__jest-dom": "^6.0.0",
+        "turbo": "^1.10.16"
+    },
+    "workspaces": [
+        "client/",
+        "server/"
+    ],
+    "dependencies": {
+        "@testing-library/jest-dom": "^6.1.4"
+    }
+}

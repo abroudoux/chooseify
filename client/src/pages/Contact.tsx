@@ -3,7 +3,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import SuccessAlert from "../components/Alerts/SuccessAlert";
-import Input from "../components/Forms/Input";
+import Input from "../components/Form/Input";
 
 
 export default function Contact() {
@@ -43,14 +43,14 @@ export default function Contact() {
                 <form action="#" method="POST" className="flex flex-col">
 
                     <div className="mb-6">
-                        <Input name="email" type="email" placeholder="Enter your email" label="Email" />
+                        <Input name="email" type="email" placeholder="Enter your email" label="Email" onChange={ handleChange }/>
                     </div>
 
                     <div className="mb-10">
                         <label htmlFor="message" className="text-lg text-grey-light font-normal">
                             Your message
                         </label>
-                        <textarea id="message" name="message" autoComplete="off"  placeholder="Enter your message" required onChange={handleChange}
+                        <textarea id="message" name="message" autoComplete="off"  placeholder="Enter your message" required onChange={ handleChange }
                             className="input-green-ring"/>
                     </div>
 

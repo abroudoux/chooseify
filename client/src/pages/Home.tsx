@@ -29,7 +29,7 @@ export default function Home() {
                         </Link>
                     </li>
                     <li data-aos="fade-up" data-aos-duration="3000">
-                        <a href="https://github.com/abroudoux/chooseify" target="_blank" className="btn gap-2 text-blue-light bg-grey-dark hover:bg-grey-dark-lighten">
+                        <a href="https://github.com/abroudoux/chooseify" target="_blank" className="btn-grey-dark-icon">
                             Github
                             <FontAwesomeIcon icon={faGithub} />
                         </a>

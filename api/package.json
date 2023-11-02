@@ -1,8 +1,8 @@
 {
-  "name": "choosify-server",
+  "name": "chooseify-api",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": "abroudoux",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
