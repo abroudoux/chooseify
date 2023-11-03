@@ -2,9 +2,9 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
-import Input from '../components/Forms/Input'
+// import Input from '../components/Form/Input';
 
 
 export default function Register() {
@@ -59,11 +59,11 @@ export default function Register() {
                 <form action="#" method="POST" className="flex flex-col">
 
                     <div className="mb-6">
-                        <Input name="email" type="email" placeholder="Enter your email" label="Email" />
+                        {/* <Input name="email" type="email" placeholder="Enter your email" label="Email" /> */}
                     </div>
 
                     <div className="mb-10">
-                        <Input name="password" type="password" placeholder="Enter your password" label="Password" />
+                        {/* <Input name="password" type="password" placeholder="Enter your password" label="Password" /> */}
                     </div>
 
                     <div className="flex-row-center-center">
