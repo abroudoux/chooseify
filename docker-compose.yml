@@ -5,11 +5,11 @@ services:
       context: ./client
       dockerfile: Dockerfile
     ports:
-      - "3000:5174"
+      - "3000:5175"
 
   server:
     build: 
-      context: ./server
+      context: ./api
       dockerfile: Dockerfile
     ports:
       - "8080:5000"
