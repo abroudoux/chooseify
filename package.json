@@ -1,8 +1,7 @@
 {
     "name": "chooseify",
-    "description": "",
     "version": "0.0.1",
-    "author": "abroudoux",
+    "author": "Arthur Broudoux <abroudoux>",
     "public": true,
     "license": "MIT",
     "scripts": {
