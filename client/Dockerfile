@@ -9,9 +9,9 @@ RUN npm i
 
 COPY . .
 
-ENV PORT=5173
+ENV PORT=4000
 
-EXPOSE 5173
+EXPOSE 4000
 
 CMD [ "npm", "run", "dev" ]
 
