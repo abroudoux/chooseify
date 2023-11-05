@@ -11,7 +11,7 @@ import { AuthModule } from './auth/auth.module';
 
 @Module({
     imports: [
-        MongooseModule.forRoot('mongodb://localhost:{}/chooseify'),
+        MongooseModule.forRoot('mongodb://localhost/chooseify'),
         ServeStaticModule.forRoot({
             rootPath: join(__dirname, '../..', 'client', 'dist'),
         }),
