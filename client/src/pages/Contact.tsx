@@ -26,7 +26,8 @@ export default function Contact() {
 
 
     return (
-        <section className="flex flex-row">
+
+        <section className="flex flex-row w-full h-full">
 
             {showSuccess && (
                 <SuccessAlert message="Message succesfully sent" messageCta="Go Home" path="/" />
@@ -81,5 +82,6 @@ export default function Contact() {
             </div>
 
         </section>
+
     )
 };
