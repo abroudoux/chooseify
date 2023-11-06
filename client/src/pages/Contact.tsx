@@ -47,11 +47,7 @@ export default function Contact() {
                     </div>
 
                     <div className="mb-10">
-                        <label htmlFor="message" className="text-lg text-grey-light font-normal">
-                            Your message
-                        </label>
-                        <textarea id="message" name="message" autoComplete="off"  placeholder="Enter your message" required onChange={ handleChange }
-                            className="input-green-ring"/>
+                        <Input element="textarea" name="message" label="Your message" placeholder="Enter your message" onChange={ handleChange } />
                     </div>
 
                     <div className="flex-row-center-center">

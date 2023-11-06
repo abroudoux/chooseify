@@ -13,6 +13,7 @@ import Start from "./pages/Start";
 import Header from "./components/Header/Header";
 import HeaderDashboard from "./components/Header/HeaderDashboard";
 import Footer from "./components/Footer/Footer";
+import Padding from "./components/Config/Padding";
 
 import "./style/index.css";
 
@@ -27,6 +28,9 @@ const AppRoutes = () => {
     const showHeaderPaths = ["/", "/start", "/about", "/contact"];
     const shouldShowHeader = showHeaderPaths.includes(location.pathname);
 
+    const showPaddingPaths = ["/"];
+    const shouldShowPadding = showPaddingPaths.includes(location.pathname);
+
     const showHeaderDashboardPaths = ["/dashboard", "/dashboard/account"];
     const shouldShowHeaderDashboard = showHeaderDashboardPaths.includes(location.pathname);
 
@@ -35,6 +39,7 @@ const AppRoutes = () => {
 
     return (
         <>
+            {shouldShowPadding && <Padding position="top" color="green"/>}
             {shouldShowHeader && <Header />}
             {shouldShowHeaderDashboard && <HeaderDashboard />}
                 <Routes>
@@ -47,6 +52,7 @@ const AppRoutes = () => {
                     <Route path="/register" element={<Register />} />
                 </Routes>
             {shouldShowFooter && <Footer />}
+            {shouldShowPadding && <Padding position="bottom" color="green-lighten"/>}
         </>
     );
 };
