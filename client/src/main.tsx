@@ -52,7 +52,7 @@ const AppRoutes = () => {
                     <Route path="/register" element={<Register />} />
                 </Routes>
             {shouldShowFooter && <Footer />}
-            {shouldShowPadding && <Padding position="bottom" color="green-lighten"/>}
+           {shouldShowPadding && <Padding position="bottom" color="green" />} 
         </>
     );
 };
