@@ -28,7 +28,7 @@ const AppRoutes = () => {
     const showHeaderPaths = ["/", "/start", "/about", "/contact"];
     const shouldShowHeader = showHeaderPaths.includes(location.pathname);
 
-    const showPaddingPaths = ["/"];
+    const showPaddingPaths = ["/", "/about"];
     const shouldShowPadding = showPaddingPaths.includes(location.pathname);
 
     const showHeaderDashboardPaths = ["/dashboard", "/dashboard/account"];
@@ -53,6 +53,7 @@ const AppRoutes = () => {
                 </Routes>
             {shouldShowFooter && <Footer />}
            {shouldShowPadding && <Padding position="bottom" color="green" />} 
+           {/* <div className={`bottom-0 left-0 fixed h-4 w-full bg-green z-20`}></div> */}
         </>
     );
 };
