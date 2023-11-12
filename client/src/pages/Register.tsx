@@ -10,26 +10,10 @@ import SignInfos from '../components/Content/SignInfos';
 
 export default function Register() {
 
-    const variants1 = {
+    const variants = {
         hidden: {
             x: "100%",
             opacity: 1,
-        },
-        visible: {
-            x: 0,
-            opacity: 1,
-            transition: {
-                type: "spring",
-                damping: 15,
-                stiffness: 100,
-            },
-        },
-    };
-
-    const variants2 = {
-        hidden: {
-            x: "-100%",
-            opacity: 0,
         },
         visible: {
             x: 0,
@@ -46,7 +30,7 @@ export default function Register() {
 
         <motion.section className="h-screen flex-row-center bg-green" initial="hidden" animate="visible">
 
-            <motion.div className="h-full w-2/4 p-6 flex-col-center-center gap-14 bg-black rounded-s-lg" variants={variants1}>
+            <motion.div className="h-full w-2/4 p-6 flex-col-center-center gap-14 bg-black rounded-s-lg" variants={ variants }>
 
                 <div className="flex-col-center gap-4">
                     <Link to={"/"}>
@@ -91,15 +75,6 @@ export default function Register() {
             </motion.div>
 
             <SignInfos roundedPosition="e" initialPositionX="-100%"/>
-
-            {/* <motion.div className="h-full w-2/4 flex flex-col justify-center items-start gap-4 bg-blue-light rounded-e-lg p-10" variants={variants2}>
-                <p className="text-grey-dark font-black text-7xl">
-                    Don't know which album to listen to ?
-                </p>
-                <p className="text-grey-dark font-medium text-3xl">
-                    Let <span className="font-semibold italic">Choosify</span> help you choose
-                </p>
-            </motion.div> */}
 
         </motion.section>
 

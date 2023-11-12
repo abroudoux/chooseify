@@ -28,7 +28,7 @@ const SignInfos : FC<SignInfosProps> = ( props ) => {
 
     return (
 
-        <motion.div className={`h-full w-2/4 flex flex-col justify-center items-start gap-4 p-10 bg-blue-light rounded-${ props.roundedPosition }-lg`} variants={variants}>
+        <motion.div className={`h-full w-2/4 flex flex-col justify-center items-start gap-4 p-10 bg-blue-light rounded-${ props.roundedPosition }-lg`} variants={ variants }>
             <p className="text-grey-dark font-black text-7xl">
                 Don't know which album to listen to ?
             </p>
