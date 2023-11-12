@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import Input from '../components/Form/Input';
+import SignInfos from "../components/Content/SignInfos";
 
 
 export default function Login() {
@@ -45,14 +46,16 @@ export default function Login() {
 
         <motion.section className="h-screen flex flex-row bg-green" initial="hidden" animate="visible">
 
-            <motion.div className="h-full w-2/4 flex flex-col justify-center items-start gap-4 p-10 bg-blue-light rounded-s-lg" variants={variants1}>
+            <SignInfos roundedPosition="s" initialPositionX="100%"/>
+
+            {/* <motion.div className="h-full w-2/4 flex flex-col justify-center items-start gap-4 p-10 bg-blue-light rounded-s-lg" variants={variants1}>
                     <p className="text-grey-dark font-black text-7xl">
                         Don't know which album to listen to ?
                     </p>
                     <p className="text-grey-dark font-medium text-3xl">
                         Let <span className="font-semibold italic">Choosify</span> help you choose
                     </p>
-            </motion.div>
+            </motion.div> */}
 
             <motion.div className="h-full w-2/4 p-6 flex-col-center-center gap-14 bg-black rounded-e-lg" variants={variants2}>
 
