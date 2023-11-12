@@ -11,7 +11,7 @@ export default function Login() {
 
     const variants1 = {
         hidden: {
-            x: "-50%",
+            x: "100%",
             opacity: 1,
         },
         visible: {
@@ -27,8 +27,8 @@ export default function Login() {
 
     const variants2 = {
         hidden: {
-            x: "50%",
-            opacity: 1,
+            x: "-100%",
+            opacity: 0,
         },
         visible: {
             x: 0,
@@ -43,7 +43,7 @@ export default function Login() {
 
     return (
 
-        <motion.section className="h-screen flex flex-row bg-green" initial="hidden" animate="visible" variants={variants1}>
+        <motion.section className="h-screen flex flex-row bg-green" initial="hidden" animate="visible">
 
             <motion.div className="h-full w-2/4 flex flex-col justify-center items-start gap-4 p-10 bg-blue-light rounded-s-lg" variants={variants1}>
                     <p className="text-grey-dark font-black text-7xl">

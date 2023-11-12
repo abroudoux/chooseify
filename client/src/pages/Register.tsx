@@ -11,7 +11,7 @@ export default function Register() {
 
     const variants1 = {
         hidden: {
-            x: "50%",
+            x: "100%",
             opacity: 1,
         },
         visible: {
@@ -27,7 +27,7 @@ export default function Register() {
 
     const variants2 = {
         hidden: {
-            x: "-50%",
+            x: "-100%",
             opacity: 0,
         },
         visible: {
@@ -43,7 +43,7 @@ export default function Register() {
 
     return (
 
-        <motion.section className="h-screen flex-row-center bg-green" initial="hidden" animate="visible" variants={variants1}>
+        <motion.section className="h-screen flex-row-center bg-green" initial="hidden" animate="visible">
 
             <motion.div className="h-full w-2/4 p-6 flex-col-center-center gap-14 bg-black rounded-s-lg" variants={variants1}>
 

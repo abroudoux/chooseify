@@ -8,7 +8,7 @@ export default function Header() {
 
     return (
 
-        <header className="w-full flex-row-center-between px-10 py-4 sticky top-4 bg-grey-dark rounded-t-lg">
+        <header className="w-full flex-row-center-between px-10 z-20 py-4 sticky top-4 bg-grey-dark rounded-t-lg">
 
             <div>
                 <Link to={"/"}>

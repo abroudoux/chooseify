@@ -73,7 +73,7 @@ textarea {
 }
 
 .page {
-    @apply w-full h-auto flex-col-center p-20 bg-black text-grey-light
+    @apply w-full h-auto flex-col-center bg-black text-grey-light
 }
 
 .btn {

@@ -11,7 +11,7 @@ export default function Home() {
 
     return (
 
-        <section className="page gap-64">
+        <section className="page gap-64 p-20">
 
             <div className="h-auto w-full flex-col-center gap-20">
 
@@ -47,7 +47,7 @@ export default function Home() {
                     <h2 className="text-5xl max-w-5xl text-white font-bold">
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, minima?
                     </h2>
-                    <p className="text-lg text-grey-light font-medium">
+                    <p className="text-lg text-grey-light font-medium mt-4">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur eaque optio sunt nam voluptatibus maiores explicabo quam cumque adipisci voluptates recusandae maxime necessitatibus odio officia commodi ea nisi, nemo perferendis.
                     </p>
                 </div>
