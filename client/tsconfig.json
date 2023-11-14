@@ -21,10 +21,11 @@
         "jsx": "react",
         "baseUrl": ".",
         "paths": {
-            "@/*": [
-                "./src/*"
-            ]
+            "@/*": ["./src/*"],
+            "components": ["./src/components/*"],
+            "pages": ["./src/pages/*"],
         }
     },
-    "include": ["./src", "test/Home.test.tsx"]
+    "include": ["./src", "test/Home.test.tsx"],
+    "extends": "./tsconfig.paths.json",
 }

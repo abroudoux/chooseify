@@ -2,20 +2,20 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
-import Home from './pages/Home'
-import Register from "./pages/Register";
-import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Start from "./pages/Start";
+import Home from "@/pages/Home";
+import Register from "@/pages/Register";
+import Login from "@/pages/Login";
+import Dashboard from "@/pages/Dashboard";
+import About from "@/pages/About";
+import Contact from "@/pages/Contact";
+import Start from "@/pages/Start";
 
-import Header from "./components/Header/Header";
-import HeaderDashboard from "./components/Header/HeaderDashboard";
-import Footer from "./components/Footer/Footer";
-import Padding from "./components/Config/Padding";
+import Header from "@/components/Header/Header";
+import HeaderDashboard from "@/components/Header/HeaderDashboard";
+import Footer from "@/components/Footer/Footer";
+import Padding from "@/components/Config/Padding";
 
-import "./style/index.css";
+import "@/style/index.css";
 
 
 const rootContainer = document.getElementById("root");

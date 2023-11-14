@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Card from "../components/Cards/Card";
+import Card from "@/components/Cards/Card";
 
 
 export default function Home() {
