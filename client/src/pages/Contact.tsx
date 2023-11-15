@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import SuccessAlert from "../components/Alerts/SuccessAlert";
-import Input from "../components/Form/Input";
+import SuccessAlert from "@/components/Alerts/SuccessAlert";
+import Input from "@/components/Form/Input";
 
 
 export default function Contact() {

@@ -1,6 +1,6 @@
-import React, { FC } from "react";
+import { FC } from "react";
 
-import "../../style/components/card.scss";
+import "@/style/components/card.scss";
 
 
 type CardProps = {

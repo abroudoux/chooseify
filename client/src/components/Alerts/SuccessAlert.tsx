@@ -1,9 +1,9 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { Link } from "react-router-dom";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import "../../style/components/success.scss";
+import "@/style/components/success.scss";
 
 
 
@@ -19,11 +19,11 @@ const SuccessAlert : FC<SuccessAlertProps> = ( props ) => {
 
         <div className="h-full w-full absolute top-0 left-0 flex-col-center-center overflow-y-hidden">
 
-            <Link to={ props.path } className="h-full w-full absolute">
+            <Link to={ props.path } className="h-full w-full absolute z-40">
                 <div className="h-full w-full bg-blue-light opacity-90 absolute"></div>
             </Link>
 
-            <div className="w-auto min-w-min h-auto flex-col-center gap-10 p-14 bg-grey-dark  rounded-lg z-10">
+            <div className="w-auto min-w-min h-auto flex-col-center gap-10 p-14 bg-grey-dark  rounded-lg z-50">
 
                 <div className="w-auto h-auto rounded-lg flex-row-center-between gap-3 bg-grey-dark">
                     <div className="success-animation">

@@ -1,7 +1,5 @@
-import React from 'react';
 
-
-function Dashboard() {;
+export default function Dashboard() {;
 
     return (
         <section className="page rounded-b-lg">
@@ -11,5 +9,3 @@ function Dashboard() {;
 
 };
 
-
-export default Dashboard;
