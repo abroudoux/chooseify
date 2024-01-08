@@ -5,8 +5,10 @@
             "DOM", "DOM.Iterable", "ESNext"
         ],
         "types": [
-            "vite/client", "@testing-library/jest-dom"
+            "vite/client",
+            "@testing-library/jest-dom"
         ],
+        "typeRoots": ["./typings", "./node_modules/@types"],
         "allowJs": true,
         "skipLibCheck": true,
         "esModuleInterop": true,
@@ -18,13 +20,13 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noEmit": true,
-        "jsx": "react",
+        "jsx": "react-jsx",
         "baseUrl": ".",
         "paths": {
             "@/*": [
                 "./src/*"
             ]
-        }
+        },
     },
     "include": ["./src", "test/Home.test.tsx"]
 }

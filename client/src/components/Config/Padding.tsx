@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 
 
 type PaddingProps = {
@@ -7,11 +7,8 @@ type PaddingProps = {
 };
 
 const Padding : FC<PaddingProps> = ( props ) => {
-
     return (
-
         <div className={`${props.position}-0 left-0 fixed h-4 z-50 w-full bg-${props.color}`}></div>
-
     );
 };
 

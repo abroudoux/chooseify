@@ -1,7 +1,7 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import '../../style/components/navlinks.scss';
+import '@/style/components/navlinks.scss';
 
 
 type NavLinkProps = {
@@ -15,14 +15,12 @@ const NavLinks : FC<NavLinkProps> = ( props ) => {
     const location = useLocation();
 
     return (
-
-        <li className={`px-4 py-2 text-blue-light left-${ props.left } hover:text-blue-light-lighten ${location.pathname === props.path ? "active" : ""}`}>
+        <li className={`px-4 py-2 text-xl text-blue-light left-${ props.left } hover:text-blue-light-lighten ${location.pathname === props.path ? "active" : ""}`}>
             <Link to={ props.path }>
                 { props.title }
             </Link>
         </li>
-
-    )
+    );
 };
 
 

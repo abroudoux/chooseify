@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { motion } from 'framer-motion';
 
 
@@ -27,8 +27,7 @@ const SignInfos : FC<SignInfosProps> = ( props ) => {
 
 
     return (
-
-        <motion.div className={`h-full w-2/4 flex flex-col justify-center items-start gap-4 p-10 bg-blue-light rounded-${ props.roundedPosition }-lg`} variants={ variants }>
+        <motion.div className={`w-2/4 h-screen flex flex-col-start-center items-start gap-8 p-12 bg-blue-light rounded-${ props.roundedPosition }-lg`} variants={ variants }>
             <p className="text-grey-dark font-black text-7xl">
                 Don't know which album to listen to ?
             </p>
@@ -36,7 +35,6 @@ const SignInfos : FC<SignInfosProps> = ( props ) => {
                 Let <span className="font-semibold italic">Choosify</span> help you choose
             </p>
         </motion.div>
-
     );
 
 };

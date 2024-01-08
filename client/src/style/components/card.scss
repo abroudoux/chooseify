@@ -5,7 +5,7 @@
     perspective: 1000px;
     transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
     cursor: pointer;
-  }
+}
 
 .card:hover {
     transform: rotateY(10deg) rotateX(10deg) scale(1.05);

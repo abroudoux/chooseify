@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 
@@ -7,9 +6,7 @@ export default function HeaderDashboard() {
     let userName = "Arthur";
 
     return (
-
         <header className="w-full flex-row-center-between sticky top-4 bg-grey-dark px-10 py-4 rounded-t-lg">
-
             <div>
                 <Link to={"/"} className="flex-row-center gap-3">
                     <div className="h-14 w-14 bg-green rounded-full"></div>
@@ -25,8 +22,6 @@ export default function HeaderDashboard() {
                     <div className="h-10 w-10 bg-grey-light rounded-full"></div>
                 </Link>
             </div>
-
         </header>
-
-    )
-}
+    );
+};

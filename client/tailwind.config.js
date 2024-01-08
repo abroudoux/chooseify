@@ -33,10 +33,12 @@ export const theme = {
             "accordion-up": "accordion-up 0.2s ease-out",
         },
         height: {
-            screen: '96dvh',
+            screen: '96vh',
+            full: '100%'
         },
         width: {
-            screen: '98dvw',
+            screen: '96vw',
+            full: '100%'
         },
     },
     colors: {

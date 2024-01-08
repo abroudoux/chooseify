@@ -1,9 +1,9 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { Link } from "react-router-dom";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import "../../style/components/success.scss";
+import "@/style/components/success.scss";
 
 
 
@@ -14,9 +14,7 @@ type SuccessAlertProps = {
 };
 
 const SuccessAlert : FC<SuccessAlertProps> = ( props ) => {
-
     return (
-
         <div className="h-full w-full absolute top-0 left-0 flex-col-center-center overflow-y-hidden">
 
             <Link to={ props.path } className="h-full w-full absolute">
@@ -47,9 +45,8 @@ const SuccessAlert : FC<SuccessAlertProps> = ( props ) => {
             </div>
 
         </div>
-
-    )
-}
+    );
+};
 
 
 export default SuccessAlert;

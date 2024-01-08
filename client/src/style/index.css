@@ -9,7 +9,7 @@
 }
 
 body {
-    @apply background-gradient text-grey-light p-4 scroll-smooth;
+    @apply text-grey-light scroll-smooth;
     font-family: 'Inter', sans-serif;
 }
 
@@ -72,12 +72,12 @@ textarea {
     background: -webkit-linear-gradient(var(--green), var(--blue-light));
 }
 
-.page {
-    @apply w-full h-auto flex-col-center bg-black text-grey-light
-}
+/* .page {
+    @apply w-full h-full min-h-full p-4 bg-black text-grey-light,
+} */
 
 .btn {
-    @apply flex-row-center gap-2 px-4 py-2 rounded-lg font-medium transition-all ease-in-out;
+    @apply flex-row-center text-lg gap-2 px-5 py-3 rounded-xl font-medium transition-all ease-in-out;
 }
 
 .btn-green {

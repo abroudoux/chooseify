@@ -1,15 +1,11 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
-import NavLinks from "./NavLinks";
+import NavLinks from "@/components/Header/NavLinks";
 
 
 export default function Header() {
-
     return (
-
         <header className="w-full flex-row-center-between px-10 z-20 py-4 sticky top-4 bg-grey-dark rounded-t-lg">
-
             <div>
                 <Link to={"/"}>
                     <div className="h-14 w-14 bg-green rounded-full"></div>
@@ -40,8 +36,6 @@ export default function Header() {
                     </li>
                 </ul>
             </div>
-
         </header>
-
-    )
-}
+    );
+};

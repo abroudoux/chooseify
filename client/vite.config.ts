@@ -1,22 +1,34 @@
-/// <reference types="vitest" />
-/// <reference types="vite/client" />
-
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import svgrPlugin from "vite-plugin-svgr";
+import envCompatible from "vite-plugin-env-compatible";
+import path from "path";
+
 
 export default defineConfig({
-    plugins: [react()],
-    test: {
-        globals: true,
-        environment: "jsdom",
-        setupFiles: "./vitest.setup.ts",
-        css: true,
+    envPrefix: 'REACT_APP_',
+    build: {
+        outDir: 'dist',
+    },
+    plugins: [
+        react(),
+        envCompatible(),
+        svgrPlugin({
+            svgrOptions: {
+            icon: true,
+        },
+        }),
+    ],
+    resolve: {
+        alias: {
+            "@": path.resolve(__dirname, "./src"),
+        },
     },
     server: {
         port: 4000,
         proxy: {
             '/api': {
-                target: 'http://localhost:5000',
+                target: 'http://localhost:8080',
                 changeOrigin: true
             },
         },
