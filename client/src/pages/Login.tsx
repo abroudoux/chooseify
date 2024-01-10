@@ -33,14 +33,9 @@ export default function Login() {
 
             <motion.div className="w-2/4 h-screen p-4 flex-col-center-center gap-14 bg-black rounded-e-lg" variants={ variants }>
 
-                <div className="flex-col-center-center gap-4">
-                    <Link to={"/"}>
-                        <div className="h-20 w-20 rounded-full bg-green"></div>
-                    </Link>
-                    <h1 className="text-center font-bold text-grey-light text-5xl ">
-                        Login
-                    </h1>
-                </div>
+                <h1 className="text-center font-bold text-grey-light text-5xl ">
+                    Login
+                </h1>
 
                 <form action="#" method="POST" className="flex-col mb-20">
 

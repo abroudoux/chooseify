@@ -30,14 +30,9 @@ export default function Register() {
 
             <motion.div className="w-2/4 h-screen flex-col-center-center gap-14 bg-black rounded-s-lg" variants={ variants }>
 
-                <div className="flex-col-center-center gap-4">
-                    <Link to={"/"}>
-                        <div className="h-20 w-20 rounded-full bg-green"></div>
-                    </Link>
-                    <h1 className="text-center font-bold text-grey-light text-5xl ">
-                        Sign In
-                    </h1>
-                </div>
+                <h1 className="text-center font-bold text-grey-light text-5xl ">
+                    Sign In
+                </h1>
 
                 <form action="#" method="POST" className="flex-col mb-20">
                     <div className="mb-6">

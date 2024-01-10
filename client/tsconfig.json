@@ -4,10 +4,6 @@
         "lib": [
             "DOM", "DOM.Iterable", "ESNext"
         ],
-        "types": [
-            "vite/client",
-            "@testing-library/jest-dom"
-        ],
         "typeRoots": ["./typings", "./node_modules/@types"],
         "allowJs": true,
         "skipLibCheck": true,
