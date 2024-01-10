@@ -72,12 +72,8 @@ textarea {
     background: -webkit-linear-gradient(var(--green), var(--blue-light));
 }
 
-/* .page {
-    @apply w-full h-full min-h-full p-4 bg-black text-grey-light,
-} */
-
 .btn {
-    @apply flex-row-center text-lg gap-2 px-5 py-3 rounded-xl font-medium transition-all ease-in-out;
+    @apply flex-row-center text-lg gap-2 px-4 py-3 rounded-xl font-medium transition-all ease-in-out;
 }
 
 .btn-green {
@@ -85,7 +81,7 @@ textarea {
 }
 
 .btn-green-icon {
-    @apply btn-green gap-2 hover:gap-3;
+    @apply btn-green gap-2;
 }
 
 .btn-grey-dark {

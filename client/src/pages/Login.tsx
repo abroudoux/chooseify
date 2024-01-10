@@ -51,7 +51,7 @@ export default function Login() {
                         <button type="submit"
                             className="btn-green-icon">
                                 Log In
-                                <FontAwesomeIcon icon={faArrowRight} className="text-lg" />
+                                <FontAwesomeIcon icon={faArrowRight} className="text-md" />
                         </button>
                     </div>
                 </form>
