@@ -6,24 +6,20 @@ import path from "path";
 
 
 export default defineConfig({
-    envPrefix: 'REACT_APP_',
-    build: {
-        outDir: 'dist',
-    },
-    plugins: [
-        react(),
-        envCompatible(),
-        svgrPlugin({
-            svgrOptions: {
-            icon: true,
-        },
-        }),
-    ],
+    plugins: [react()],
     resolve: {
-        alias: {
-            "@": path.resolve(__dirname, "./src"),
-        },
+        alias: [
+            { find: '@', replacement: path.resolve(__dirname, 'src') },
+            { find: '@components', replacement: path.resolve(__dirname, 'src/components') },
+            { find: '@pages', replacement: path.resolve(__dirname, 'src/pages') }
+        ],
     },
+    // test: {
+    //     globals: true,
+    //     environment: "jsdom",
+    //     setupFiles: "./vitest.setup.ts",
+    //     css: true,
+    // },
     server: {
         port: 4000,
         proxy: {

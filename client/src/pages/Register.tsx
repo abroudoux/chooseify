@@ -1,10 +1,10 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
-import Input from "@/components/Form/Input";
-import SignInfos from "@/components/Content/SignInfos";
+import Input from '@/components/Form/Input';
+import SignInfos from '@/components/Content/SignInfos';
 
 
 export default function Register() {

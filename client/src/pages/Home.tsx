@@ -3,6 +3,8 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
+import Card from "@/components/Cards/Card";
+
 
 export default function Home() {
     return (
