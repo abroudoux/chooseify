@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useEffect } from "react";
 
 import Input from '@/components/Form/Input';
 import SignInfos from "@/components/Content/SignInfos";
@@ -24,6 +25,26 @@ export default function Login() {
             },
         },
     };
+
+    // je veux envoyer une requête post au endpoit "localhost:4050/api/auth/login" avec le contenu du formulaire
+    // je veux que le serveur me renvoie un token
+
+    useEffect(() => {
+        fetch("http://localhost:4050/api/auth/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                email: " ",
+                password: " ",
+            }),
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+        });
+    }, []);
 
     return (
 
