@@ -3,15 +3,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { toast } from "sonner";
 
 import { FormData } from "@/types/types";
-import { variantsRegisterAuth } from "@/lib/animations";
+import { variantsRegisterAuth } from "@/helpers/animations";
+import useStore from "@/helpers/store";
 
 import Input from "@/components/Form/Input";
 import SignInfos from "@/components/Content/SignInfos";
+import { Icons } from '@/components/ui/icons';
 
 
 export default function Register() {
+
+    const { isLoading, setIsLoading } = useStore();
 
     const [formData, setFormData] = useState<FormData>({
         firstName: "",
@@ -20,6 +25,7 @@ export default function Register() {
     });
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+        setIsLoading(true);
         e.preventDefault();
 
         try {
@@ -36,10 +42,13 @@ export default function Register() {
                 console.log(data.access_token);
             } else {
                 console.error("Error:", response.statusText);
+                toast.error("Error during connexion, please retry.");
             }
         } catch (error: any) {
             console.error("Error:", error.message);
         };
+
+        setIsLoading(false);
     };
 
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -67,7 +76,11 @@ export default function Register() {
                     </div>
                     <div className="flex-row-center-center">
                         <button type="submit" className="btn-green-icon">
-                            Sign In <FontAwesomeIcon icon={faArrowRight} className="text-lg" />
+                            {isLoading ? (
+                                <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+                            ) : (
+                                <div>Sign In <FontAwesomeIcon icon={faArrowRight} className="text-lg" /></div>
+                            )}
                         </button>
                     </div>
                 </form>

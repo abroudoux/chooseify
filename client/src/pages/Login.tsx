@@ -3,15 +3,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { toast } from "sonner";
 
-import { variantsLoginAuth } from "@/lib/animations";
+import { variantsLoginAuth } from "@/helpers/animations";
 import { FormData } from "@/types/types";
+import useStore from "@/helpers/store";
 
 import Input from "@/components/Form/Input";
 import SignInfos from "@/components/Content/SignInfos";
+import { Icons } from '@/components/ui/icons';
 
 
 export default function Login() {
+
+    const { isLoading, setIsLoading } = useStore();
 
     const [formData, setFormData] = useState<FormData>({
         email: "",
@@ -19,6 +24,7 @@ export default function Login() {
     });
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+        setIsLoading(true);
         e.preventDefault();
 
         try {
@@ -35,10 +41,13 @@ export default function Login() {
                 console.log(data.access_token);
             } else {
                 console.error("Error:", response.statusText);
+                toast.error("Error during connexion, please retry.");
             }
         } catch (error: any) {
             console.error("Error:", error.message);
         };
+
+        setIsLoading(false);
     };
 
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -65,20 +74,19 @@ export default function Login() {
                         <Input name="password" type="password" placeholder="Enter your password" label="Password" onChange={handleChange} />
                     </div>
                     <div className="flex-row-center-center">
-                        <button type="submit"
-                            className="btn-green-icon">
-                                Log In
-                                <FontAwesomeIcon icon={faArrowRight} className="text-md" />
+                        <button type="submit" className="btn-green-icon">
+                        {isLoading ? (
+                            <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+                        ) : (
+                            <div>Log In<FontAwesomeIcon icon={faArrowRight} className="text-md" /></div>
+                        )}
                         </button>
                     </div>
                 </form>
 
                 <div>
-                    <p className="font-grey-light font-light text-lg">
-                        Don't have an account yet ? 
-                        <span>
-                            <Link to={"/auth/register"}  className="ml-1 font-normal text-green hover:cursor-pointer hover:text-green-lighten">Sign In</Link>
-                        </span>
+                    <p className="font-grey-light font-light text-lg">Don't have an account yet ? 
+                        <span><Link to={"/auth/register"}  className="ml-1 font-normal text-green hover:cursor-pointer hover:text-green-lighten">Sign In</Link></span>
                     </p>
                 </div>
             </motion.div>
