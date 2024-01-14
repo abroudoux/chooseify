@@ -1,23 +1,18 @@
-import { FC, useState, ChangeEvent, FormEvent } from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
+import { FormData } from "@/types/types";
+import { variantsRegisterAuth } from "@/lib/animations";
+
 import Input from "@/components/Form/Input";
 import SignInfos from "@/components/Content/SignInfos";
-import variantsAuth from "@/lib/animations";
 
 
-interface RegisterProps {}
+export default function Register() {
 
-interface FormData {
-    firstName: string;
-    email: string;
-    password: string;
-}
-
-const Register: FC<RegisterProps> = () => {
     const [formData, setFormData] = useState<FormData>({
         firstName: "",
         email: "",
@@ -55,9 +50,9 @@ const Register: FC<RegisterProps> = () => {
         }));
     };
 
-  return (
+    return (
         <motion.section className="w-full h-full p-4 min-h-screen flex-row-center bg-green" initial="hidden" animate="visible">
-            <motion.div className="w-2/4 h-screen flex-col-center-center gap-14 bg-black rounded-s-lg" variants={ variantsAuth }>
+            <motion.div className="w-2/4 h-screen flex-col-center-center gap-14 bg-black rounded-s-lg" variants={ variantsRegisterAuth }>
                 <h1 className="text-center font-bold text-grey-light text-5xl">Sign In</h1>
 
                 <form onSubmit={handleSubmit} className="flex-col mb-20">
@@ -89,8 +84,6 @@ const Register: FC<RegisterProps> = () => {
 
             <SignInfos roundedPosition="e" initialPositionX="-100%"/>
         </motion.section>
-    );
+    )
 };
 
-
-export default Register;

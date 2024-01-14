@@ -1,4 +1,4 @@
-const variantsAuth = {
+const variantsRegisterAuth = {
     hidden: {
         x: "100%",
         opacity: 1,
@@ -14,5 +14,21 @@ const variantsAuth = {
     },
 };
 
+const variantsLoginAuth = {
+    hidden: {
+        x: "-100%",
+        opacity: 0,
+    },
+    visible: {
+        x: 0,
+        opacity: 1,
+        transition: {
+            type: "spring",
+            damping: 15,
+            stiffness: 100,
+        },
+    },
+};
 
-export default variantsAuth;
+
+export { variantsRegisterAuth, variantsLoginAuth };
